@@ -23,9 +23,9 @@ class Widget{
 			return new Widget();
 		}
 	}
-//	public String toString(){
-//		return "Widget";
-//	}
+	public String toString(){
+		return "Widget";
+	}
 }
 public class FactoryConstraint {
 
