@@ -12,16 +12,17 @@ public class TestFileReader {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		Set<String> setAll = new HashSet<String>();
+		Set<String> setAll = new HashSet<String>(100000000);
 		long s = System.currentTimeMillis();
 		BufferedReader br = new BufferedReader(new FileReader(
-				"C:\\Users\\chenxi\\Desktop\\a\\xaa"));
+				"C:\\Users\\chenxi\\Desktop\\PP.txt"));
 		String data = br.readLine();// 一次读入一行，直到读入null为文件结束
 		long count = 0;
 		while (data != null) {
-			count++;
+			System.out.println("r-"+count++);
 			data = br.readLine(); // 接着读下一行
 			setAll.add(data);
+			
 		}
 		br.close();
 		System.out.println("count =" + count + " uniq size=" + setAll.size()
@@ -37,7 +38,7 @@ public class TestFileReader {
 			}
 			bw.write(tmp);
 			bw.newLine();
-			count++;
+			System.out.println("w-"+count++);
 		}
 		bw.flush();
 		bw.close();
